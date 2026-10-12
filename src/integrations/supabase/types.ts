@@ -14,7 +14,142 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      children: {
+        Row: {
+          age: number
+          created_at: string
+          display_name: string
+          guardian_consent_at: string
+          id: string
+          parent_id: string
+          preferences: Json
+        }
+        Insert: {
+          age: number
+          created_at?: string
+          display_name: string
+          guardian_consent_at: string
+          id?: string
+          parent_id: string
+          preferences?: Json
+        }
+        Update: {
+          age?: number
+          created_at?: string
+          display_name?: string
+          guardian_consent_at?: string
+          id?: string
+          parent_id?: string
+          preferences?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "children_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      learning_events: {
+        Row: {
+          activity_id: string
+          child_id: string
+          concept: string
+          correct: boolean | null
+          created_at: string
+          event_type: string
+          id: string
+          parent_id: string
+        }
+        Insert: {
+          activity_id: string
+          child_id: string
+          concept: string
+          correct?: boolean | null
+          created_at?: string
+          event_type: string
+          id?: string
+          parent_id: string
+        }
+        Update: {
+          activity_id?: string
+          child_id?: string
+          concept?: string
+          correct?: boolean | null
+          created_at?: string
+          event_type?: string
+          id?: string
+          parent_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learning_events_child_id_fkey"
+            columns: ["child_id"]
+            isOneToOne: false
+            referencedRelation: "children"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learning_events_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string
+          id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      support_requests: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          parent_id: string
+          subject: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          parent_id: string
+          subject: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          parent_id?: string
+          subject?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "support_requests_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
