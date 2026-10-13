@@ -14,7 +14,7 @@ export default function Geometry({ turn = 0, variant = 'Rotation' }: { turn?: nu
   const css = getComputedStyle(element);
   const colors = ['--ochre', '--terracotta', '--primary', '--forest'].map(token => new THREE.Color(css.getPropertyValue(token).trim().startsWith('oklch') ? ({'--ochre':'#B57424','--terracotta':'#B84E26','--primary':'#0E2235','--forest':'#1F4A34'}[token] ?? '#B57424') : css.getPropertyValue(token).trim()));
   const materials = colors.map(color => new THREE.MeshStandardMaterial({ color, roughness: .55, metalness: .08 }));
-  const offsets = variant === 'Symmetry' ? [[-1,0,0],[1,0,0],[0,1,0],[0,-1,0]] : [[-.6,0,0],[.6,0,0],[0,1,0],[0,0,1.2]];
+  const offsets: [number, number, number][] = variant === 'Symmetry' ? [[-1,0,0],[1,0,0],[0,1,0],[0,-1,0]] : [[-.6,0,0],[.6,0,0],[0,1,0],[0,0,1.2]];
   offsets.forEach((position, index) => { const mesh = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.1, 1.1), materials[index]); mesh.position.set(position[0], position[1], position[2]); mesh.castShadow = true; root.add(mesh); });
   root.rotation.y = turn * Math.PI/2; root.rotation.z = -.15;
   scene.add(new THREE.HemisphereLight(0xffffff, 0xc4ad92, 2.5)); const light = new THREE.DirectionalLight(0xffefda, 4); light.position.set(3,6,4); scene.add(light);

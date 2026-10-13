@@ -15,7 +15,7 @@ export const saveChild = createServerFn({ method: 'POST' }).middleware([requireS
  return result.data;
 });
 export const recordLearning = createServerFn({ method: 'POST' }).middleware([requireSupabaseAuth]).inputValidator((data: unknown) => z.object({ child_id: z.string().uuid(), activity_id: z.enum(['patterns', 'shapes', 'numbers', 'words', 'sample']), concept: z.enum(['Sequence', 'Rotation', 'Number relationships', 'Analogy']), event_type: z.enum(['answer','hint','explanation','manipulation','transfer','discovery']), correct: z.boolean().optional() }).parse(data)).handler(async ({ data, context }) => {
- const result = await context.supabase.from('learning_events').insert({ ...data, parent_id: context.userId });
+ const result = await context.supabase.from('learning_events').insert({ child_id: data.child_id, activity_id: data.activity_id, concept: data.concept, event_type: data.event_type, correct: data.correct ?? null, parent_id: context.userId });
  if (result.error) throw new Error('This observation could not be saved.');
  return { saved: true };
 });
@@ -30,7 +30,7 @@ export const deleteChild = createServerFn({ method: 'POST' }).middleware([requir
  return { deleted: true };
 });
 export const sendSupport = createServerFn({ method: 'POST' }).middleware([requireSupabaseAuth]).inputValidator((data: unknown) => z.object({ subject: z.string().trim().min(1).max(150), message: z.string().trim().min(1).max(2000) }).parse(data)).handler(async ({ data, context }) => {
- const result = await context.supabase.from('support_requests').insert({ ...data, parent_id: context.userId });
+ const result = await context.supabase.from('support_requests').insert({ child_id: data.child_id, activity_id: data.activity_id, concept: data.concept, event_type: data.event_type, correct: data.correct ?? null, parent_id: context.userId });
  if (result.error) throw new Error('Your request could not be saved.');
  return { saved: true };
 });
