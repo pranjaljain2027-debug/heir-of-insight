@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import PublicPage from "@/components/wisdom/public-pages";
+import LearningHistory from "@/components/wisdom/learning-history";
 
 export const Route = createFileRoute("/discoveries")({
   head: () => ({
@@ -16,5 +16,5 @@ export const Route = createFileRoute("/discoveries")({
 });
 
 function RouteComponent() {
-  return <PublicPage kind="discoveries" />;
+  return <LearningHistory view="discoveries" />;
 }

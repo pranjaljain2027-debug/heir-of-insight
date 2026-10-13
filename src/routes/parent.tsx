@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import PublicPage from "@/components/wisdom/public-pages";
+import LearningHistory from "@/components/wisdom/learning-history";
 
 export const Route = createFileRoute("/parent")({
   head: () => ({
     meta: [
-      { title: "Parent | Heir of Wisdom" },
+      { title: "Parent dashboard | Heir of Wisdom" },
       { name: "description", content: "Parent — Heir of Wisdom, a cognitive learning studio for curious children." },
-      { property: "og:title", content: "Parent | Heir of Wisdom" },
+      { property: "og:title", content: "Parent dashboard | Heir of Wisdom" },
       { property: "og:description", content: "Parent — Heir of Wisdom, a cognitive learning studio for curious children." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -16,5 +16,5 @@ export const Route = createFileRoute("/parent")({
 });
 
 function RouteComponent() {
-  return <PublicPage kind="parent" />;
+  return <LearningHistory view="parent" />;
 }
