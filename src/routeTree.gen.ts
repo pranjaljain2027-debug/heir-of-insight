@@ -10,33 +10,297 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as CogatRouteImport } from './routes/cogat'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiscoveriesRouteImport } from './routes/discoveries'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ForParentsRouteImport } from './routes/for-parents'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NnatRouteImport } from './routes/nnat'
+import { Route as OlsatRouteImport } from './routes/olsat'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ParentRouteImport } from './routes/parent'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StudioRouteImport } from './routes/studio'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as LearnActivityIdRouteImport } from './routes/learn.$activityId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CogatRoute = CogatRouteImport.update({
+  id: '/cogat',
+  path: '/cogat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoveriesRoute = DiscoveriesRouteImport.update({
+  id: '/discoveries',
+  path: '/discoveries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForParentsRoute = ForParentsRouteImport.update({
+  id: '/for-parents',
+  path: '/for-parents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NnatRoute = NnatRouteImport.update({
+  id: '/nnat',
+  path: '/nnat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OlsatRoute = OlsatRouteImport.update({
+  id: '/olsat',
+  path: '/olsat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentRoute = ParentRouteImport.update({
+  id: '/parent',
+  path: '/parent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnActivityIdRoute = LearnActivityIdRouteImport.update({
+  id: '/learn/$activityId',
+  path: '/learn/$activityId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/cogat': typeof CogatRoute
+  '/contact': typeof ContactRoute
+  '/discoveries': typeof DiscoveriesRoute
+  '/faq': typeof FaqRoute
+  '/for-parents': typeof ForParentsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/journey': typeof JourneyRoute
+  '/login': typeof LoginRoute
+  '/nnat': typeof NnatRoute
+  '/olsat': typeof OlsatRoute
+  '/onboarding': typeof OnboardingRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/learn/$activityId': typeof LearnActivityIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/cogat': typeof CogatRoute
+  '/contact': typeof ContactRoute
+  '/discoveries': typeof DiscoveriesRoute
+  '/faq': typeof FaqRoute
+  '/for-parents': typeof ForParentsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/journey': typeof JourneyRoute
+  '/login': typeof LoginRoute
+  '/nnat': typeof NnatRoute
+  '/olsat': typeof OlsatRoute
+  '/onboarding': typeof OnboardingRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/learn/$activityId': typeof LearnActivityIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/account': typeof AccountRoute
+  '/cogat': typeof CogatRoute
+  '/contact': typeof ContactRoute
+  '/discoveries': typeof DiscoveriesRoute
+  '/faq': typeof FaqRoute
+  '/for-parents': typeof ForParentsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/journey': typeof JourneyRoute
+  '/login': typeof LoginRoute
+  '/nnat': typeof NnatRoute
+  '/olsat': typeof OlsatRoute
+  '/onboarding': typeof OnboardingRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/signup': typeof SignupRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/learn/$activityId': typeof LearnActivityIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/account'
+    | '/cogat'
+    | '/contact'
+    | '/discoveries'
+    | '/faq'
+    | '/for-parents'
+    | '/how-it-works'
+    | '/journey'
+    | '/login'
+    | '/nnat'
+    | '/olsat'
+    | '/onboarding'
+    | '/parent'
+    | '/pricing'
+    | '/privacy'
+    | '/signup'
+    | '/studio'
+    | '/terms'
+    | '/learn/$activityId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/account'
+    | '/cogat'
+    | '/contact'
+    | '/discoveries'
+    | '/faq'
+    | '/for-parents'
+    | '/how-it-works'
+    | '/journey'
+    | '/login'
+    | '/nnat'
+    | '/olsat'
+    | '/onboarding'
+    | '/parent'
+    | '/pricing'
+    | '/privacy'
+    | '/signup'
+    | '/studio'
+    | '/terms'
+    | '/learn/$activityId'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/account'
+    | '/cogat'
+    | '/contact'
+    | '/discoveries'
+    | '/faq'
+    | '/for-parents'
+    | '/how-it-works'
+    | '/journey'
+    | '/login'
+    | '/nnat'
+    | '/olsat'
+    | '/onboarding'
+    | '/parent'
+    | '/pricing'
+    | '/privacy'
+    | '/signup'
+    | '/studio'
+    | '/terms'
+    | '/learn/$activityId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccountRoute: typeof AccountRoute
+  CogatRoute: typeof CogatRoute
+  ContactRoute: typeof ContactRoute
+  DiscoveriesRoute: typeof DiscoveriesRoute
+  FaqRoute: typeof FaqRoute
+  ForParentsRoute: typeof ForParentsRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  JourneyRoute: typeof JourneyRoute
+  LoginRoute: typeof LoginRoute
+  NnatRoute: typeof NnatRoute
+  OlsatRoute: typeof OlsatRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ParentRoute: typeof ParentRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SignupRoute: typeof SignupRoute
+  StudioRoute: typeof StudioRoute
+  TermsRoute: typeof TermsRoute
+  LearnActivityIdRoute: typeof LearnActivityIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +312,171 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cogat': {
+      id: '/cogat'
+      path: '/cogat'
+      fullPath: '/cogat'
+      preLoaderRoute: typeof CogatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discoveries': {
+      id: '/discoveries'
+      path: '/discoveries'
+      fullPath: '/discoveries'
+      preLoaderRoute: typeof DiscoveriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-parents': {
+      id: '/for-parents'
+      path: '/for-parents'
+      fullPath: '/for-parents'
+      preLoaderRoute: typeof ForParentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nnat': {
+      id: '/nnat'
+      path: '/nnat'
+      fullPath: '/nnat'
+      preLoaderRoute: typeof NnatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/olsat': {
+      id: '/olsat'
+      path: '/olsat'
+      fullPath: '/olsat'
+      preLoaderRoute: typeof OlsatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent': {
+      id: '/parent'
+      path: '/parent'
+      fullPath: '/parent'
+      preLoaderRoute: typeof ParentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn/$activityId': {
+      id: '/learn/$activityId'
+      path: '/learn/$activityId'
+      fullPath: '/learn/$activityId'
+      preLoaderRoute: typeof LearnActivityIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccountRoute: AccountRoute,
+  CogatRoute: CogatRoute,
+  ContactRoute: ContactRoute,
+  DiscoveriesRoute: DiscoveriesRoute,
+  FaqRoute: FaqRoute,
+  ForParentsRoute: ForParentsRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  JourneyRoute: JourneyRoute,
+  LoginRoute: LoginRoute,
+  NnatRoute: NnatRoute,
+  OlsatRoute: OlsatRoute,
+  OnboardingRoute: OnboardingRoute,
+  ParentRoute: ParentRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  SignupRoute: SignupRoute,
+  StudioRoute: StudioRoute,
+  TermsRoute: TermsRoute,
+  LearnActivityIdRoute: LearnActivityIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
